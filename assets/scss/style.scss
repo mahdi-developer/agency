@@ -348,7 +348,11 @@ button {
   @media(max-width:991px) {
     padding: 12px 35px 12px 30px;
   }
-
+  @media (max-width:575px) {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    padding: 14px 30px 14px 24px;
+  }
   @media (max-width:375px) {
     padding: 12px 0 12px 0;
     justify-content: center;
@@ -385,20 +389,27 @@ button {
   gap: 11px;
   align-items: center;
   transition: all 0.3s linear;
+  @media (max-width:575px) {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    padding: 14px 30px 14px 24px;
+  }
+  @media (max-width:375px) {
+    margin-top: 11.25px;
+    padding: 12px 0 12px 0;
+    justify-content: center;
+  }
+  svg {
+    margin-bottom: 4px;
+  }
 
   &:hover {
     background: var(--blue-deep);
     -webkit-text-fill-color: var(--white);
     border: 1px solid var(--white);
-
   }
 
-  @media (max-width:575px) {
-    margin-top: 11.25px;
-    padding: 12px 0 12px 0;
-    justify-content: center;
 
-  }
 }
 
 /* helper , base classes  - END*/
@@ -557,6 +568,12 @@ header {
       line-height: 26px !important;
       padding-top: 20px;
       padding-bottom: 30px;
+    }
+  }
+
+  .hero-btns {
+    @media(max-width:375px) {
+      display: block !important;
     }
   }
 
@@ -1281,10 +1298,13 @@ header {
 
       @media (max-width:575px) {
         margin-top: 68px;
-        display: block !important;
-        width: 100%;
         text-align: center;
         margin-inline: 16px;
+      }
+
+      @media (max-width:375px) {
+        display: block !important;
+        width: 100%;
       }
     }
   }

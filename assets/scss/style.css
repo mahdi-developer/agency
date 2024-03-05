@@ -314,6 +314,13 @@ button {
     padding: 12px 35px 12px 30px;
   }
 }
+@media (max-width: 575px) {
+  .primary-btn {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    padding: 14px 30px 14px 24px;
+  }
+}
 @media (max-width: 375px) {
   .primary-btn {
     padding: 12px 0 12px 0;
@@ -347,17 +354,27 @@ button {
   align-items: center;
   transition: all 0.3s linear;
 }
-.secondary-btn:hover {
-  background: var(--blue-deep);
-  -webkit-text-fill-color: var(--white);
-  border: 1px solid var(--white);
-}
 @media (max-width: 575px) {
+  .secondary-btn {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    padding: 14px 30px 14px 24px;
+  }
+}
+@media (max-width: 375px) {
   .secondary-btn {
     margin-top: 11.25px;
     padding: 12px 0 12px 0;
     justify-content: center;
   }
+}
+.secondary-btn svg {
+  margin-bottom: 4px;
+}
+.secondary-btn:hover {
+  background: var(--blue-deep);
+  -webkit-text-fill-color: var(--white);
+  border: 1px solid var(--white);
 }
 
 /* helper , base classes  - END*/
@@ -505,6 +522,11 @@ header .navbar-toggler:focus {
     line-height: 26px !important;
     padding-top: 20px;
     padding-bottom: 30px;
+  }
+}
+@media (max-width: 375px) {
+  .hero .hero-btns {
+    display: block !important;
   }
 }
 @media (max-width: 991px) {
@@ -1189,10 +1211,14 @@ header .navbar-toggler:focus {
 @media (max-width: 575px) {
   .brand-boost .meta-container a {
     margin-top: 68px;
-    display: block !important;
-    width: 100%;
     text-align: center;
     margin-inline: 16px;
+  }
+}
+@media (max-width: 375px) {
+  .brand-boost .meta-container a {
+    display: block !important;
+    width: 100%;
   }
 }
 

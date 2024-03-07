@@ -544,6 +544,17 @@ header .navbar-toggler:focus {
   }
 }
 
+.rotate-center {
+  animation: rotate-center 3s linear NaNs infinite both;
+}
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .brands {
   padding-block: 30px;
 }

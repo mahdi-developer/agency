@@ -1,6 +1,6 @@
 /**
  * @Main scss for (Template/Project Name)
- * @project     - Spotdif
+ * @project     - Digital Agency
  * @author      - 
  * @created_by  - Muhammad Mahdiul Islam
  * @created_at  - 
@@ -157,7 +157,6 @@ button {
 /* helper , base classes */
 
 // text-color
-
 .text-clr-primary {
   color: var(--primary);
 }
@@ -321,6 +320,7 @@ button {
   &:hover {
     background: var(--purple-deep);
     color: var(--white);
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955);
   }
 
   @media (max-width: 991px) {
@@ -369,9 +369,9 @@ button {
   &:hover {
     background: var(--purple-deep);
     color: var(--white);
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
   }
-
-
 }
 
 .secondary-btn {
@@ -412,9 +412,41 @@ button {
     background: var(--blue-deep);
     -webkit-text-fill-color: var(--white);
     border: 1px solid var(--white);
+    transform: scale(0.9);
+
+    svg * {
+      fill: #fff;
+    }
+  }
+}
+
+@keyframes shake-horizontal {
+
+  0%,
+  100% {
+    transform: translateX(0);
   }
 
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-10px);
+  }
 
+  20%,
+  40%,
+  60% {
+    transform: translateX(10px);
+  }
+
+  80% {
+    transform: translateX(8px);
+  }
+
+  90% {
+    transform: translateX(-8px);
+  }
 }
 
 /* helper , base classes  - END*/
@@ -537,6 +569,21 @@ header {
     font-size: 101px;
     font-weight: 500;
     line-height: 85px;
+    animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    @keyframes focus-in-contract {
+      0% {
+        letter-spacing: 1em;
+        filter: blur(12px);
+        opacity: 0;
+      }
+
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
 
     @media (max-width:1399px) {
       font-size: 85px !important;
@@ -585,6 +632,7 @@ header {
 
   .image {
     position: relative;
+
     &::before {
       position: absolute;
       content: '';
@@ -592,20 +640,66 @@ header {
       background-repeat: no-repeat;
       width: 173px;
       height: 173px;
-      top: -38px;
-      left: 194px;
+      left: 220px;
       z-index: -1;
       animation: rotate-center 6s linear infinite;
       -webkit-animation: rotate-center 6s linear infinite;
+
+      @media(max-width:1399px) {
+        background-size: contain;
+        width: 150px;
+        height: 150px;
+        left: 150px;
+      }
+
+      @media(max-width:1199px) {
+        width: 100px;
+        height: 100px;
+        left: 115px;
+      }
+
+      @media(max-width:991px) {
+        top: 70px;
+        left: 240px;
+      }
+
+      @media(max-width:767px) {
+        animation: none;
+        -webkit-animation: none;
+        left: 150px;
+        top: 70px;
+      }
+
+      @media(max-width:575px) {
+        width: 74px;
+        height: 74px;
+        top: 80px;
+        left: 190px;
+      }
+
+      @media(max-width:490px) {
+        left: 130px;
+      }
+
+      @media(max-width:400px) {
+        left: 100px;
+      }
+
+      @media(max-width:375px) {
+        top: 60px;
+        left: 100px;
+      }
     }
+
     img {
       z-index: 9;
+
       @media (max-width: 991px) {
         max-height: 424px;
         height: 100%;
         padding-top: 71px;
       }
-  
+
       @media (max-width: 375px) {
         max-height: 298px;
         height: 100%;
@@ -613,19 +707,18 @@ header {
       }
     }
   }
-  
-}
 
+}
 
 @keyframes rotate-center {
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
-
 
 // Hero section end
 
@@ -1014,7 +1107,6 @@ header {
 
 // Review section end
 
-
 // Microverse section start
 .microverse {
   padding-block: 120px;
@@ -1126,8 +1218,6 @@ header {
       }
     }
   }
-
-
 }
 
 // Microverse section end
@@ -1155,6 +1245,8 @@ header {
     left: 89px;
     width: 170px;
     height: 166px;
+    animation: rotate-center 6s linear infinite;
+    -webkit-animation: rotate-center 6s linear infinite;
 
     @media(max-width:1199px) {
       background-size: contain;
@@ -1350,6 +1442,7 @@ header {
 // Strategize section start
 .strategize {
   padding-block: 120px 381px;
+  overflow: hidden;
   position: relative;
 
   @media (max-width:991px) {
@@ -1390,6 +1483,8 @@ header {
     height: 166px;
     right: 2px;
     bottom: 122px;
+    animation: rotate-center 6s linear infinite;
+    -webkit-animation: rotate-center 6s linear infinite;
 
     @media (max-width:1199px) {
       display: none;
@@ -1567,7 +1662,6 @@ header {
       width: 0;
     }
   }
-
 }
 
 // Strategize section end
@@ -1605,7 +1699,7 @@ header {
     &::after {
       position: absolute;
       content: '';
-      background-image: url(../img/next-gen-p.png);
+      background-image: url('../img/next-gen-p.png');
       background-repeat: no-repeat;
       height: 522px;
       width: 1048px;
@@ -1922,7 +2016,6 @@ header {
         }
       }
     }
-
   }
 }
 
@@ -2206,7 +2299,6 @@ header {
         }
       }
     }
-
   }
 }
 
@@ -2326,7 +2418,6 @@ header {
         min-width: auto !important;
       }
     }
-
   }
 }
 

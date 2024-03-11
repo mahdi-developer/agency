@@ -1,6 +1,6 @@
 /**
  * @Main scss for (Template/Project Name)
- * @project     - Spotdif
+ * @project     - Digital Agency
  * @author      - 
  * @created_by  - Muhammad Mahdiul Islam
  * @created_at  - 
@@ -286,6 +286,7 @@ button {
 .contact-btn:hover {
   background: var(--purple-deep);
   color: var(--white);
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 @media (max-width: 991px) {
   .contact-btn {
@@ -335,6 +336,7 @@ button {
 .primary-btn:hover {
   background: var(--purple-deep);
   color: var(--white);
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .secondary-btn {
@@ -375,8 +377,29 @@ button {
   background: var(--blue-deep);
   -webkit-text-fill-color: var(--white);
   border: 1px solid var(--white);
+  transform: scale(0.9);
+}
+.secondary-btn:hover svg * {
+  fill: #fff;
 }
 
+@keyframes shake-horizontal {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+  90% {
+    transform: translateX(-8px);
+  }
+}
 /* helper , base classes  - END*/
 header .nav-wrap {
   position: absolute;
@@ -481,6 +504,18 @@ header .navbar-toggler:focus {
   font-size: 101px;
   font-weight: 500;
   line-height: 85px;
+  animation: focus-in-contract 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 1em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 @media (max-width: 1399px) {
   .hero h1 {
@@ -540,11 +575,63 @@ header .navbar-toggler:focus {
   background-repeat: no-repeat;
   width: 173px;
   height: 173px;
-  top: -38px;
-  left: 194px;
+  left: 220px;
   z-index: -1;
   animation: rotate-center 6s linear infinite;
   -webkit-animation: rotate-center 6s linear infinite;
+}
+@media (max-width: 1399px) {
+  .hero .image::before {
+    background-size: contain;
+    width: 150px;
+    height: 150px;
+    left: 150px;
+  }
+}
+@media (max-width: 1199px) {
+  .hero .image::before {
+    width: 100px;
+    height: 100px;
+    left: 115px;
+  }
+}
+@media (max-width: 991px) {
+  .hero .image::before {
+    top: 70px;
+    left: 240px;
+  }
+}
+@media (max-width: 767px) {
+  .hero .image::before {
+    animation: none;
+    -webkit-animation: none;
+    left: 150px;
+    top: 70px;
+  }
+}
+@media (max-width: 575px) {
+  .hero .image::before {
+    width: 74px;
+    height: 74px;
+    top: 80px;
+    left: 190px;
+  }
+}
+@media (max-width: 490px) {
+  .hero .image::before {
+    left: 130px;
+  }
+}
+@media (max-width: 400px) {
+  .hero .image::before {
+    left: 100px;
+  }
+}
+@media (max-width: 375px) {
+  .hero .image::before {
+    top: 60px;
+    left: 100px;
+  }
 }
 .hero .image img {
   z-index: 9;
@@ -1068,6 +1155,8 @@ header .navbar-toggler:focus {
   left: 89px;
   width: 170px;
   height: 166px;
+  animation: rotate-center 6s linear infinite;
+  -webkit-animation: rotate-center 6s linear infinite;
 }
 @media (max-width: 1199px) {
   .brand-boost::before {
@@ -1252,6 +1341,7 @@ header .navbar-toggler:focus {
 
 .strategize {
   padding-block: 120px 381px;
+  overflow: hidden;
   position: relative;
 }
 @media (max-width: 991px) {
@@ -1295,6 +1385,8 @@ header .navbar-toggler:focus {
   height: 166px;
   right: 2px;
   bottom: 122px;
+  animation: rotate-center 6s linear infinite;
+  -webkit-animation: rotate-center 6s linear infinite;
 }
 @media (max-width: 1199px) {
   .strategize::after {
@@ -1487,7 +1579,7 @@ header .navbar-toggler:focus {
 .next-gen-wrapper .next-gen-wrap::after {
   position: absolute;
   content: "";
-  background-image: url(../img/next-gen-p.png);
+  background-image: url("../img/next-gen-p.png");
   background-repeat: no-repeat;
   height: 522px;
   width: 1048px;

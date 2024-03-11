@@ -436,6 +436,7 @@ header .navbar-toggler:focus {
   background-position: center center;
   padding-top: 212px;
   overflow: hidden;
+  z-index: 8;
 }
 @media (max-width: 991px) {
   .hero {
@@ -529,24 +530,40 @@ header .navbar-toggler:focus {
     display: block !important;
   }
 }
+.hero .image {
+  position: relative;
+}
+.hero .image::before {
+  position: absolute;
+  content: "";
+  background-image: url(../img/hero1-p.png);
+  background-repeat: no-repeat;
+  width: 173px;
+  height: 173px;
+  top: -38px;
+  left: 194px;
+  z-index: -1;
+  animation: rotate-center 6s linear infinite;
+  -webkit-animation: rotate-center 6s linear infinite;
+}
+.hero .image img {
+  z-index: 9;
+}
 @media (max-width: 991px) {
-  .hero img {
+  .hero .image img {
     max-height: 424px;
     height: 100%;
     padding-top: 71px;
   }
 }
 @media (max-width: 375px) {
-  .hero img {
+  .hero .image img {
     max-height: 298px;
     height: 100%;
     padding-top: 69.25px !important;
   }
 }
 
-.rotate-center {
-  animation: rotate-center 3s linear NaNs infinite both;
-}
 @keyframes rotate-center {
   0% {
     transform: rotate(0);

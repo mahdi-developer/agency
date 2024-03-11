@@ -496,6 +496,7 @@ header {
   background-position: center center;
   padding-top: 212px;
   overflow: hidden;
+  z-index: 8;
 
   @media (max-width: 991px) {
     background-image: url("../img/hero-md-bg.png");
@@ -582,44 +583,46 @@ header {
     }
   }
 
-  img {
-    @media (max-width: 991px) {
-      max-height: 424px;
-      height: 100%;
-      padding-top: 71px;
+  .image {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url(../img/hero1-p.png);
+      background-repeat: no-repeat;
+      width: 173px;
+      height: 173px;
+      top: -38px;
+      left: 194px;
+      z-index: -1;
+      animation: rotate-center 6s linear infinite;
+      -webkit-animation: rotate-center 6s linear infinite;
     }
-
-    @media (max-width: 375px) {
-      max-height: 298px;
-      height: 100%;
-      padding-top: 69.25px !important;
+    img {
+      z-index: 9;
+      @media (max-width: 991px) {
+        max-height: 424px;
+        height: 100%;
+        padding-top: 71px;
+      }
+  
+      @media (max-width: 375px) {
+        max-height: 298px;
+        height: 100%;
+        padding-top: 69.25px !important;
+      }
     }
   }
+  
 }
 
-.rotate-center {
-	-webkit-animation: rotate-center 3s linear NaNs infinite both;
-	        animation: rotate-center 3s linear NaNs infinite both;
-}
 
-@-webkit-keyframes rotate-center {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
 @keyframes rotate-center {
   0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 

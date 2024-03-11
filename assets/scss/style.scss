@@ -320,7 +320,6 @@ button {
   &:hover {
     background: var(--purple-deep);
     color: var(--white);
-    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955);
   }
 
   @media (max-width: 991px) {
@@ -369,8 +368,6 @@ button {
   &:hover {
     background: var(--purple-deep);
     color: var(--white);
-    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955);
-
   }
 }
 
@@ -412,40 +409,9 @@ button {
     background: var(--blue-deep);
     -webkit-text-fill-color: var(--white);
     border: 1px solid var(--white);
-    transform: scale(0.9);
-
     svg * {
       fill: #fff;
     }
-  }
-}
-
-@keyframes shake-horizontal {
-
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  10%,
-  30%,
-  50%,
-  70% {
-    transform: translateX(-10px);
-  }
-
-  20%,
-  40%,
-  60% {
-    transform: translateX(10px);
-  }
-
-  80% {
-    transform: translateX(8px);
-  }
-
-  90% {
-    transform: translateX(-8px);
   }
 }
 
@@ -569,7 +535,7 @@ header {
     font-size: 101px;
     font-weight: 500;
     line-height: 85px;
-    animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-contract 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
     @keyframes focus-in-contract {
       0% {
@@ -1111,6 +1077,7 @@ header {
 .microverse {
   padding-block: 120px;
   position: relative;
+  z-index: 1;
 
   &::after {
     position: absolute;
@@ -1121,6 +1088,7 @@ header {
     left: 634px;
     width: 431px;
     height: 195px;
+    z-index: -1;
 
     @media (max-width:1070px) {
       background-size: contain;
@@ -1904,27 +1872,27 @@ header {
       right: 19px;
     }
   }
+  h2 {
+    padding-bottom: 60px;
+    max-width: 688px;
+    margin: auto;
 
+    @media (max-width:991px) {
+      padding-bottom: 80px;
+    }
+
+    @media (max-width:575px) {
+      font-size: 28px;
+      line-height: 38px !important;
+      padding-bottom: 30px;
+    }
+  }
   .meta-container {
     max-width: 1404px;
     margin: auto;
     z-index: 8;
 
-    h2 {
-      padding-bottom: 60px;
-      max-width: 688px;
-      margin: auto;
-
-      @media (max-width:991px) {
-        padding-bottom: 80px;
-      }
-
-      @media (max-width:575px) {
-        font-size: 28px;
-        line-height: 38px !important;
-        padding-bottom: 30px;
-      }
-    }
+    
 
     .splide {
       .splide__track {
@@ -1964,6 +1932,7 @@ header {
     .metacard {
       text-align: center;
       padding: 40px;
+      border-radius: 22px;
       z-index: 99;
 
       &::before {
@@ -2162,6 +2131,7 @@ header {
 
     @media (max-width:1399px) {
       min-height: 250px !important;
+      background-size: 100% 100% !important;
     }
 
     @media (max-width:1199px) {
@@ -2480,9 +2450,14 @@ footer {
           font-size: 14px;
           line-height: 21px !important;
         }
-
+        svg *{
+          transition: 0.3s linear;
+        }
         &:hover {
           color: var(--white);
+          svg *{
+            fill: var(--white);
+          }
         }
       }
     }

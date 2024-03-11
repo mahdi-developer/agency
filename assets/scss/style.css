@@ -286,7 +286,6 @@ button {
 .contact-btn:hover {
   background: var(--purple-deep);
   color: var(--white);
-  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 @media (max-width: 991px) {
   .contact-btn {
@@ -336,7 +335,6 @@ button {
 .primary-btn:hover {
   background: var(--purple-deep);
   color: var(--white);
-  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .secondary-btn {
@@ -377,29 +375,11 @@ button {
   background: var(--blue-deep);
   -webkit-text-fill-color: var(--white);
   border: 1px solid var(--white);
-  transform: scale(0.9);
 }
 .secondary-btn:hover svg * {
   fill: #fff;
 }
 
-@keyframes shake-horizontal {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  10%, 30%, 50%, 70% {
-    transform: translateX(-10px);
-  }
-  20%, 40%, 60% {
-    transform: translateX(10px);
-  }
-  80% {
-    transform: translateX(8px);
-  }
-  90% {
-    transform: translateX(-8px);
-  }
-}
 /* helper , base classes  - END*/
 header .nav-wrap {
   position: absolute;
@@ -504,7 +484,7 @@ header .navbar-toggler:focus {
   font-size: 101px;
   font-weight: 500;
   line-height: 85px;
-  animation: focus-in-contract 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: focus-in-contract 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 @keyframes focus-in-contract {
   0% {
@@ -1019,6 +999,7 @@ header .navbar-toggler:focus {
 .microverse {
   padding-block: 120px;
   position: relative;
+  z-index: 1;
 }
 .microverse::after {
   position: absolute;
@@ -1029,6 +1010,7 @@ header .navbar-toggler:focus {
   left: 634px;
   width: 431px;
   height: 195px;
+  z-index: -1;
 }
 @media (max-width: 1070px) {
   .microverse::after {
@@ -1791,27 +1773,27 @@ header .navbar-toggler:focus {
     right: 19px;
   }
 }
-.help-brands .meta-container {
-  max-width: 1404px;
-  margin: auto;
-  z-index: 8;
-}
-.help-brands .meta-container h2 {
+.help-brands h2 {
   padding-bottom: 60px;
   max-width: 688px;
   margin: auto;
 }
 @media (max-width: 991px) {
-  .help-brands .meta-container h2 {
+  .help-brands h2 {
     padding-bottom: 80px;
   }
 }
 @media (max-width: 575px) {
-  .help-brands .meta-container h2 {
+  .help-brands h2 {
     font-size: 28px;
     line-height: 38px !important;
     padding-bottom: 30px;
   }
+}
+.help-brands .meta-container {
+  max-width: 1404px;
+  margin: auto;
+  z-index: 8;
 }
 .help-brands .meta-container .splide .splide__track {
   padding-inline: 20px !important;
@@ -1844,6 +1826,7 @@ header .navbar-toggler:focus {
 .help-brands .meta-container .metacard {
   text-align: center;
   padding: 40px;
+  border-radius: 22px;
   z-index: 99;
 }
 .help-brands .meta-container .metacard::before {
@@ -2030,6 +2013,7 @@ header .navbar-toggler:focus {
 @media (max-width: 1399px) {
   .specialize .tech-card {
     min-height: 250px !important;
+    background-size: 100% 100% !important;
   }
 }
 @media (max-width: 1199px) {
@@ -2365,8 +2349,14 @@ footer ul li a {
     line-height: 21px !important;
   }
 }
+footer ul li a svg * {
+  transition: 0.3s linear;
+}
 footer ul li a:hover {
   color: var(--white);
+}
+footer ul li a:hover svg * {
+  fill: var(--white);
 }
 @media (max-width: 991px) {
   footer .pt-25 {
